@@ -7,7 +7,7 @@
 #
 # All rights reserved.
 
-
+import os
 import asyncio
 import shlex
 from typing import Tuple
@@ -18,6 +18,9 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 import config
 
 from ..logging import LOGGER
+
+os.environ['GIT_PYTHON_REFRESH'] = 'quiet'
+
 
 loop = asyncio.get_event_loop_policy().get_event_loop()
 
